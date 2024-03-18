@@ -1,6 +1,6 @@
 "use client";
+import { ActiveSectionContextType, ActiveSectionProps, SectionName } from "@/lib/types";
 import React, { createContext, useContext, useState } from "react";
-import { links } from "@/lib/data";
 
 
 
