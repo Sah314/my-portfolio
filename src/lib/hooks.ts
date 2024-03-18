@@ -1,0 +1,26 @@
+import { InView, useInView } from 'react-intersection-observer';
+import React, { useEffect } from 'react'
+import { useActiveSessionCtx } from '../../context/active-section-context';
+import type { SectionName } from './types';
+
+export function useSectionInView(
+    sectionName:SectionName,threshhold=0.75
+) {
+const {ref, inView } = useInView(
+    {
+        threshold:threshhold
+    }
+);
+console.log("SectionName: ",sectionName, "and inView: %",inView);
+const { setActiveSection } = useActiveSessionCtx();
+useEffect(() => {
+  if (inView) {
+    setActiveSection(sectionName);
+  }
+}, [inView, sectionName, setActiveSection]);
+
+return {
+    ref,
+}
+}
+

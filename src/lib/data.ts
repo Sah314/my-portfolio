@@ -56,3 +56,7 @@ export const projectData=[
         imageUrl:nftcollection,
     },
 ] as const
+
+export const skillData = [
+    "HTML","CSS","Javascript","React", "Next.js", "Node.js", "C++","TypeScript", "Golang", "Tailwind","Express","Git","Docker","GCP", "MongoDB","PostgreSQL","Solidity", "PolygonID","Hardhat","web3js","Ethers.js"
+] as const
