@@ -28,6 +28,9 @@ error: "Invalid message"
     text: sendersMessage as string,
   });}
 catch(err){
-    console.error(err)
+    console.log(err);
+    return {
+        error: err
+    }
 }
   };
