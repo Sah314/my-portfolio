@@ -2,6 +2,9 @@ import kanabanimg from '@/assets/images/kanban.png'
 import wikiimg from '@/assets/images/rickandmorty.png'
 import nftcollection from '@/assets/images/nft_collection.png'
 import ainotetaker from '@/assets/images/ai_note_taker.png'
+import { LuGraduationCap } from 'react-icons/lu';
+import React from 'react';
+import { CgWorkAlt } from 'react-icons/cg';
 export const links = [
 {
     name: "Home",
@@ -24,7 +27,7 @@ export const links = [
     hash:"#experience",
 },
 {
-    name: "ContactMe",
+    name: "Contact",
     hash:"#contact",
 },
 
@@ -59,4 +62,28 @@ export const projectData=[
 
 export const skillData = [
     "HTML","CSS","Javascript","React", "Next.js", "Node.js", "C++","TypeScript", "Golang", "Tailwind","Express","Git","Docker","GCP", "MongoDB","PostgreSQL","Solidity", "PolygonID","Hardhat","web3js","Ethers.js"
+] as const
+
+export const experienceData = [
+    {
+        title:"Graduated",
+        location:"Gandhinagar,Gujarat",
+        description:"",
+        icon: React.createElement(LuGraduationCap),
+        date: "2024",
+    },
+    {
+        title:"Technical Intern",
+        location:"Ahmedabad,Gujarat",
+        description:"",
+        icon: React.createElement(CgWorkAlt),
+        date: "2023",
+    },
+    {
+        title:"Member of technical staff Intern",
+        location:"Indore,Madhyapradesh",
+        description:"",
+        icon: React.createElement(CgWorkAlt),
+        date: "2024",
+    }
 ] as const

@@ -11,7 +11,7 @@ const {ref, inView } = useInView(
         threshold:threshhold
     }
 );
-console.log("SectionName: ",sectionName, "and inView: %",inView);
+
 const { setActiveSection } = useActiveSessionCtx();
 useEffect(() => {
   if (inView) {
@@ -20,7 +20,7 @@ useEffect(() => {
 }, [inView, sectionName, setActiveSection]);
 
 return {
-    ref,
+    ref
 }
 }
 

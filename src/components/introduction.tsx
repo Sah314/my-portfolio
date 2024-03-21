@@ -8,11 +8,12 @@ import {BsArrowRight, BsLinkedin} from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi';
 import { FaGithubSquare } from 'react-icons/fa';
 import { useSectionInView } from '@/lib/hooks';
+import { useActiveSessionCtx } from '../../context/active-section-context';
 
 
 const Introduction = () => { 
 const { ref } = useSectionInView("Home",0.5);
-
+const {setActiveSection } = useActiveSessionCtx();
   return (
     <section
       ref={ref}
@@ -75,7 +76,9 @@ const { ref } = useSectionInView("Home",0.5);
       >
         <Link
           href="#contact"
-          className="group bg-gray-800 text-white px-7 py-3 flex items-center gap-4 rounded-full outline-none focus:scale-110 hover:bg-gray-950 hover:scale-110 active:scale-105 transition"
+          className="group bg-gray-800 text-white px-7 py-3 flex items-center gap-4 rounded-full outline-none focus:scale-110 
+          "
+          onClick={()=>{setActiveSection("Contact")}}
         >
           {" "}
           Contact me Here{" "}
