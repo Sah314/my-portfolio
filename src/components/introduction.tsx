@@ -78,7 +78,9 @@ const {setActiveSection } = useActiveSessionCtx();
           href="#contact"
           className="group bg-gray-800 text-white px-7 py-3 flex items-center gap-4 rounded-full outline-none focus:scale-110 
           "
-          onClick={()=>{setActiveSection("Contact")}}
+          onClick={() => {
+            setActiveSection("Contact");
+          }}
         >
           {" "}
           Contact me Here{" "}
@@ -86,7 +88,7 @@ const {setActiveSection } = useActiveSessionCtx();
         </Link>
 
         <a
-          className=" group text-gray-900 bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:bg-slate-200 hover:scale-110 active:scale-105 transition cursor-pointer border-black/10"
+          className=" group text-gray-900 bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:bg-slate-200 hover:scale-110 active:scale-105 transition cursor-pointer border-black/10 dark:bg-white/10 dark:text-white/60"
           href="./CV.pdf"
           download
         >
@@ -97,7 +99,7 @@ const {setActiveSection } = useActiveSessionCtx();
 
         <a
           href="https://www.linkedin.com/in/sahil-khadayate/"
-          className="text-gray-700 bg-white p-4 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:bg-slate-200 hover:scale-110 active:scale-105 transition border-black/10"
+          className="text-gray-700 bg-white p-4 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:bg-slate-200 hover:scale-110 active:scale-105 transition border-black/10 dark:bg-white/10 dark:text-white/60"
           target="_blank"
         >
           <BsLinkedin />
@@ -105,7 +107,7 @@ const {setActiveSection } = useActiveSessionCtx();
 
         <a
           href="https://github.com/Sah314"
-          className="text-gray-700 bg-white p-4 flex items-center gap-2 text-[1.35rem] rounded-full outline-none focus:scale-110 hover:bg-slate-200 hover:scale-110 active:scale-105 transition border-black/10"
+          className="text-gray-700 bg-white p-4 flex items-center gap-2 text-[1.35rem] rounded-full outline-none focus:scale-110 hover:bg-slate-200 hover:scale-110 active:scale-105 transition border-black/10 dark:bg-white/10 dark:text-white/60"
           target="_blank"
         >
           <FaGithubSquare />

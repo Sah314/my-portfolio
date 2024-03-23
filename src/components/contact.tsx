@@ -29,7 +29,7 @@ const Contact = () => {
       // }}
     >
       <Section_Heading Name="Contact Me" />
-      <p>
+      <p className="text-gray-700 dark:text-white/80">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:sahilkhadayatework@gmail.com">
           sahilkhadayatework@gmail.com
@@ -39,24 +39,22 @@ const Contact = () => {
 
       <form
         action={async (formData) => {
-         
-         const {data} = await SendEmail(formData);
-          
-         if(data?.data===null && data.error){
-          const errorMessage = getErrorMessage(data.error);
-          toast.error(errorMessage);
-          return;
-         }
-         console.log(data);
-         toast.success("Email Sent Successfully")
+          const { data } = await SendEmail(formData);
 
+          if (data?.data === null && data.error) {
+            const errorMessage = getErrorMessage(data.error);
+            toast.error(errorMessage);
+            return;
+          }
+          console.log(data);
+          toast.success("Email Sent Successfully");
         }}
-        className="flex flex-col gap-2 mt-3 pt-3 justify-items-start"
+        className="flex flex-col gap-2 mt-3 pt-3 dark:text-black"
       >
         <input
           name="email"
           type="email"
-          className=" rounded-xl h-10 px-4 outline-none border border-black/10 focus:border-black focus:border-2"
+          className=" rounded-xl h-10 px-4 outline-none border border-black/10 focus:border-black focus:border-2 dark:bg-opacity-50 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           required
           placeholder="Your Email"
           maxLength={50}
@@ -66,11 +64,11 @@ const Contact = () => {
           id="message"
           required
           className="rounded-xl px-4 pt-2 h-[10rem] mb-3 outline-none border border-black/10
-          focus:border-black focus:border-2"
+          focus:border-black focus:border-2 dark:bg-opacity-50 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your Message"
           maxLength={300}
         />
-        <SubmitButton/>
+        <SubmitButton />
       </form>
     </motion.section>
   );
