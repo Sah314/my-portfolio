@@ -1,14 +1,15 @@
 "use client";
 import React from 'react'
 import Section_Heading from './section_heading';
-import { FaPaperPlane } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
+import {getErrorMessage} from '@/lib/utils'
 import { SendEmail } from '@/servercomponents/resolveEmail';
+import SubmitButton from './submitButton';
+import toast from 'react-hot-toast';
 
 const Contact = () => {
   const {ref} = useSectionInView("Contact")
-
   return (
     <motion.section
       ref={ref}
@@ -30,17 +31,25 @@ const Contact = () => {
       <Section_Heading Name="Contact Me" />
       <p>
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
+        <a className="underline" href="mailto:sahilkhadayatework@gmail.com">
+          sahilkhadayatework@gmail.com
         </a>{" "}
         or through this form.
       </p>
 
       <form
         action={async (formData) => {
-          try {
-            await SendEmail(formData);
-          } catch (error) {}
+         
+         const {data} = await SendEmail(formData);
+          
+         if(data?.data===null && data.error){
+          const errorMessage = getErrorMessage(data.error);
+          toast.error(errorMessage);
+          return;
+         }
+         console.log(data);
+         toast.success("Email Sent Successfully")
+
         }}
         className="flex flex-col gap-2 mt-3 pt-3 justify-items-start"
       >
@@ -61,13 +70,7 @@ const Contact = () => {
           placeholder="Your Message"
           maxLength={300}
         />
-        <button
-          type="submit"
-          className="group flex rounded-full bg-gray-800 text-white h-12 w-32 p-3 justify-center items-center gap-2 text-center hover:bg-gray-950 hover:scale-110 active:scale-105 transition"
-        >
-          Submit{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 " />
-        </button>
+        <SubmitButton/>
       </form>
     </motion.section>
   );

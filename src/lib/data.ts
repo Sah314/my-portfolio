@@ -66,23 +66,23 @@ export const skillData = [
 
 export const experienceData = [
     {
-        title:"Graduated",
+        title:"Pandit Deendayal Energy University",
         location:"Gandhinagar,Gujarat",
-        description:"",
+        description:"Graduated with an impressive CGPA of 9.75 in Computer Science and Engineering",
         icon: React.createElement(LuGraduationCap),
-        date: "2024",
+        date: "2020-2024",
     },
     {
-        title:"Technical Intern",
+        title:"Einfochips- an Arrow Company",
         location:"Ahmedabad,Gujarat",
-        description:"",
+        description:"Technical Intern: Worked on creating responsive frontend for web-applications",
         icon: React.createElement(CgWorkAlt),
         date: "2023",
     },
     {
-        title:"Member of technical staff Intern",
+        title:"Bugsmirror Research Pvt. Ltd.",
         location:"Indore,Madhyapradesh",
-        description:"",
+        description:"Member of technical staff Intern",
         icon: React.createElement(CgWorkAlt),
         date: "2024",
     }

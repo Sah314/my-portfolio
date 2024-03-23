@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "../../context/active-section-context";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "react-hot-toast";
+import Themeswitch from "@/components/themeswitch";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,7 +28,9 @@ export default function RootLayout({
         <ActiveSectionContextProvider>
           <Header />
           {children}
+          <Toaster position="bottom-right" />
         </ActiveSectionContextProvider>
+        <Themeswitch />
       </body>
     </html>
   );
