@@ -17,7 +17,7 @@ const {setActiveSection } = useActiveSessionCtx();
   return (
     <section
       ref={ref}
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-36"
+      className="mb-28 max-w-[45rem] text-center sm:mb-0 scroll-mt-36"
       id="home"
     >
       <div className="flex items-center justify-center">
